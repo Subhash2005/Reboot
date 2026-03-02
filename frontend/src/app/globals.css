@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050b18;
+  --foreground: #e2e8f0;
+  --card: rgba(15, 23, 42, 0.7);
+  --card-foreground: #f8fafc;
+  --primary: #0ea5e9;
+  --primary-foreground: #0ea5e9;
+  --secondary: #7c3aed;
+  --secondary-foreground: #7c3aed;
+  --accent: #22d3ee;
+  --accent-foreground: #22d3ee;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --ring: #0ea5e9;
+  --radius: 1rem;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+.premium-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-bg {
+  background: radial-gradient(circle at top right, #1e1b4b 0%, #050b18 50%, #020617 100%);
+  min-height: 100vh;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
